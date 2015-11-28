@@ -1,7 +1,10 @@
 # -*- coding: UTF-8 -*-
 
 from PIL import Image
-img = Image.open('images/pyladies-tokyo.png')
+
+# 画像を開く
+name = "images/pyladies-tokyo.png"
+img = Image.open(name)
 
 
 #################################
