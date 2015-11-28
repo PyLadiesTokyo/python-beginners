@@ -1,0 +1,79 @@
+#Practice version of Guess the number project
+#Complete the full program 
+
+import simplegui
+import random 
+import math
+secret_number=0
+upper_limit=100
+# helper function to start and restart the game
+def new_game():
+    # initialize global variables used in your code here
+    
+    global secret_number
+    global upper_limit
+    global number_of_chances
+    if upper_limit==100:
+         number_of_chances=7
+    else:
+            number_of_chances=10
+    print "================================================"
+    print "New Game Begins"
+    print "Range is from 0 to", str(upper_limit)
+    print "Number of Guesses remaining:", number_of_chances
+    
+    secret_number=#1.Fill here
+
+
+# define event handlers for control panel
+def range100():
+    # button that changes the range to [0,100) and starts a new game 
+    global upper_limit
+    upper_limit=100
+    new_game()
+    
+def range1000():
+    # button that changes the range to [0,1000) and starts a new game     
+    global upper_limit
+    upper_limit=1000
+    new_game()
+    
+    
+def input_guess(guess):
+    # main game logic goes here	
+    global your_guess
+    global number_of_chances
+    global upper_limit
+    number_of_chances-=1
+    your_guess= int(guess)
+    print" "
+    print "Guess was ",your_guess
+    print "Number of Guesses remaining:", number_of_chances 
+    if (your_guess > secret_number):
+        #2.Fill here
+    elif(your_guess < secret_number):
+                #3.Fill here
+    else:
+                #4.Fill here
+                
+    if number_of_chances==0 and your_guess != secret_number:
+        #5.Fill here
+     
+        
+
+    
+# create frame
+f = simplegui.create_frame("Guess the number",300,300)
+
+# register event handlers for control elements and start frame
+f.add_button("Range is (0,100]", range100, 200)
+f.add_button("Range is (0,1000]", range1000, 200)
+f.add_input("input_guess", input_guess, 200)
+
+# call new_game 
+new_game()
+f.start()
+
+# always remember to check your completed program against the grading rubric
+Status API Training Shop Blog About Pricing
+© 2015 GitHub, Inc. Terms Privacy Security Contact Help
